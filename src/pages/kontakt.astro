@@ -1,10 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainPage from "../components/MainPage.astro";
+import MainPageHeadline from "../components/MainPageHeadline.astro";
 ---
 
-<Layout>
-  <h1>kontakt</h1>
-</Layout>
+<MainPage>
+  <MainPageHeadline>Kontakt & Booking</MainPageHeadline>
+  <div>
+    <h2 class="text-2xl font-bold mb-2">Tassilo Pesold</h2>
+
+    <ul class="text-xl">
+      <li>
+        Tel:
+        <a
+          class="underline underline-offset-4 text-amber-700"
+          href="tel:+49 176 20770769"
+        >
+          +49 176 20770769
+        </a>
+      </li>
+      <li>
+        E-Mail: <a
+          class="underline underline-offset-4 text-amber-700"
+          href="mailto:tassilo-pesold@gmx.de">tassilo-pesold@gmx.de</a
+        >
+      </li>
+    </ul>
+  </div>
+  <p class="mb-4"></p>
+</MainPage>

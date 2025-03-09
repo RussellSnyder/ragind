@@ -1,0 +1,11 @@
+---
+const { href, isExternal } = Astro.props;
+---
+
+<a
+  href={href}
+  target={isExternal ? "_blank" : "_self"}
+  class="underline underline-offset-4 text-amber-700"
+>
+  <slot />
+</a>

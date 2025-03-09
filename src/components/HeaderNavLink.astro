@@ -1,5 +1,14 @@
 ---
-const { href, text } = Astro.props;
+const { href, text, active } = Astro.props;
 ---
 
-<a class="text-2xl font-bold" href={href}>{text}</a>
+<a
+  class:list={[
+    "text-2xl font-bold",
+    {
+      "text-gray-600 border-b-amber-700 border-b-6 font-extrabold decoration-amber-500":
+        active,
+    },
+  ]}
+  href={href}>{text}</a
+>
