@@ -1,0 +1,51 @@
+---
+import SocialMediaEntry from "./SocialMediaEntry.astro";
+
+export interface SocialMediaEntryProps {
+  name: string;
+  icon: string;
+  href: string;
+  color: string;
+}
+
+const info: SocialMediaEntryProps[] = [
+  {
+    name: "YouTube",
+    icon: "youtube",
+    href: "https://www.youtube.com/channel/UCv0xVtAaYRniUjW5WKQ-8XQ",
+    color: "ff0000",
+  },
+  {
+    name: "Facebook",
+    icon: "facebook",
+    href: "https://www.facebook.com/theragind",
+    color: "1877f2",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    href: "https://www.instagram.com/ragindiarrhea",
+    color: "c13584",
+  },
+  {
+    name: "Bandcamp",
+    icon: "bandcamp",
+    href: "https://ragindiarrhea.bandcamp.com/",
+    color: "629aa9",
+  },
+  {
+    name: "Spotify",
+    icon: "spotify",
+    href: "https://open.spotify.com/artist/3HbeUZzdJ4BLPFc7eMXUTv",
+    color: "#1ed760",
+  },
+];
+---
+
+<!-- Loads the SVG in `/src/icons/filename.svg` -->
+<div
+  id="social-media"
+  class="lg:px-8 max-w-[600px] m-auto grid grid-cols-5 gap-8 md:gap-2 items-center justify-center align-middle"
+>
+  {info.map((entry) => <SocialMediaEntry {...entry} />)}
+</div>
