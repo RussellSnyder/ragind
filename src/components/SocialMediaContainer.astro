@@ -1,4 +1,6 @@
 ---
+const { iconSize } = Astro.props;
+
 import SocialMediaEntry from "./SocialMediaEntry.astro";
 
 export interface SocialMediaEntryProps {
@@ -6,6 +8,7 @@ export interface SocialMediaEntryProps {
   icon: string;
   href: string;
   color: string;
+  size: number;
 }
 
 const info: SocialMediaEntryProps[] = [
@@ -14,30 +17,35 @@ const info: SocialMediaEntryProps[] = [
     icon: "youtube",
     href: "https://www.youtube.com/channel/UCv0xVtAaYRniUjW5WKQ-8XQ",
     color: "ff0000",
+    size: iconSize,
   },
   {
     name: "Facebook",
     icon: "facebook",
     href: "https://www.facebook.com/theragind",
     color: "1877f2",
+    size: iconSize,
   },
   {
     name: "Instagram",
     icon: "instagram",
     href: "https://www.instagram.com/ragindiarrhea",
     color: "c13584",
+    size: iconSize,
   },
   {
     name: "Bandcamp",
     icon: "bandcamp",
     href: "https://ragindiarrhea.bandcamp.com/",
     color: "629aa9",
+    size: iconSize,
   },
   {
     name: "Spotify",
     icon: "spotify",
     href: "https://open.spotify.com/artist/3HbeUZzdJ4BLPFc7eMXUTv",
     color: "#1ed760",
+    size: iconSize,
   },
 ];
 ---

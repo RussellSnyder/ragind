@@ -2,14 +2,14 @@
 import { Icon } from "astro-icon/components";
 import type { SocialMediaEntryProps } from "./SocialMediaContainer.astro";
 
-const { href, name, icon, color } = Astro.props as SocialMediaEntryProps;
+const { href, name, icon, color, size } = Astro.props as SocialMediaEntryProps;
 ---
 
 <div class="text-center m-auto">
   <a href={href} target="_blank">
     <Icon
-      class="max-w-15"
-      size={80}
+      class="max-w-15 m-auto"
+      size={size}
       style={{
         color: color,
       }}

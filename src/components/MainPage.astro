@@ -1,120 +1,42 @@
 ---
-import HeaderNavLink from "../components/HeaderNavLink.astro";
-import RDLogoCircle from "../components/RDLogo-circle.astro";
-import RDLogoSmall from "../components/RDLogo-small.astro";
 import SocialMediaContainer from "../components/SocialMediaContainer.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 import LinkComponent from "./LinkComponent.astro";
+import MainPageHeader from "./MainPageHeader.astro";
 
 const copyRightYear = new Date().getFullYear();
-
-const checkIfActive = (routeToCheck: string) =>
-  Astro.url.pathname.includes(routeToCheck);
 ---
 
 <Layout>
   <div id="home-page-container">
     <header
-      class="p-8 bg-amber-200 mb-24 inset-shadow-amber-400 inset-shadow-sm"
+      class="p-0 md:p-8 bg-amber-200 mb-0 md:mb-24 inset-shadow-amber-400 inset-shadow-sm"
     >
-      <div
-        class="flex w-full max-w-container m-auto justify-between max-w-[1200px] items-center align-middle"
-      >
-        <nav class="w-full">
-          <ul
-            class="grid auto-cols-max grid-flow-col gap-8 w-full items-center align-middle"
-          >
-            <li>
-              <a href="/">
-                <RDLogoSmall />
-              </a>
-            </li>
-            <li>
-              <HeaderNavLink
-                active={checkIfActive("bio")}
-                href="/bio"
-                text="Bio"
-              />
-            </li>
-            <li>
-              <HeaderNavLink
-                active={checkIfActive("upcoming")}
-                href="/upcoming"
-                text="Upcoming"
-              />
-            </li>
-          </ul>
-        </nav>
-        <div class="w-full relative">
-          <div class="absolute inset-x-0 -bottom-35">
-            <RDLogoCircle />
-          </div>
-        </div>
-        <div class="w-full">
-          <nav class="w-full">
-            <ul
-              class="grid auto-cols-max grid-flow-col gap-8 w-full justify-end"
-            >
-              <li>
-                <HeaderNavLink
-                  active={checkIfActive("musik")}
-                  href="/musik"
-                  text="Musik"
-                />
-              </li>
-              <li>
-                <HeaderNavLink
-                  active={checkIfActive("media")}
-                  href="/media"
-                  text="Media"
-                />
-              </li>
-              <li>
-                <HeaderNavLink
-                  active={checkIfActive("epk")}
-                  href="/epk"
-                  text="EPK"
-                />
-              </li>
-              <li>
-                <HeaderNavLink
-                  active={checkIfActive("kontakt")}
-                  href="/kontakt"
-                  text="Kontakt"
-                />
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      <MainPageHeader />
     </header>
 
-    <main class="mb-8 relative">
+    <main class="md:mb-8 relative">
       <div
-        class="fixed top-50 rounded-r-lg bg-white py-2 lg:px-4 max-w-[400px] m-auto grid grid-cols-1 gap-1 items-center justify-center align-middle"
+        class="hidden fixed top-50 rounded-r-lg bg-white py-2 lg:px-4 max-w-[400px] m-auto md:grid grid-cols-1 gap-1 items-center justify-center align-middle"
       >
-        <SocialMediaContainer />
+        <SocialMediaContainer iconSize={80} />
       </div>
-      <div class="p-4 md:p-8 bg-paper max-w-[1200px] m-auto min-h-screen">
+      <div class="p-4 md:p-8 bg-paper max-w-[1200px] m-auto md:min-h-screen">
         <slot />
       </div>
     </main>
 
-    <footer class="p-16 bg-amber-200 items-center justify-center align-middle">
-      <div class="text-center text-lg">
+    <footer class="bg-amber-200 items-center justify-center align-middle">
+      <div class="p-4 md:hidden bg-white grid grid-cols-5 gap-8">
+        <SocialMediaContainer iconSize={40} />
+      </div>
+
+      <div class="text-center text-lg p-8">
         <div>&copy; Ragin'D {copyRightYear}</div>
         <div>
           Made By <LinkComponent href="https://www.rustybass.com/" isExternal
             >Russell</LinkComponent
-          >
-        </div>
-        <div>
-          You need help with a website? <LinkComponent
-            href="https://www.rustybass.com/contact"
-            isExternal
-          >
-            Let me know 😎</LinkComponent
           >
         </div>
       </div>

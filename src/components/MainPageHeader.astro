@@ -1,0 +1,107 @@
+---
+import HeaderNavLink from "./HeaderNavLink.astro";
+import RDLogoCircle from "./RDLogo-circle.astro";
+import RDLogoSmall from "./RDLogo-small.astro";
+
+const checkIfActive = (routeToCheck: string) =>
+  Astro.url.pathname.includes(routeToCheck);
+---
+
+<div
+  class="relative px-4 md:m-auto flex w-full max-w-container m-auto justify-between max-w-[1200px] items-center align-middle"
+>
+  <nav class="w-full">
+    <ul
+      class="grid auto-cols-max grid-flow-col gap-8 w-full items-center align-middle"
+    >
+      <li>
+        <a href="/">
+          <RDLogoSmall />
+        </a>
+      </li>
+      <li class="hidden md:block">
+        <HeaderNavLink active={checkIfActive("bio")} href="/bio" text="Bio" />
+      </li>
+      <li class="hidden md:block">
+        <HeaderNavLink
+          active={checkIfActive("upcoming")}
+          href="/upcoming"
+          text="Upcoming"
+        />
+      </li>
+    </ul>
+  </nav>
+  <div class="hidden md:block w-full relative">
+    <div class="absolute inset-x-0 -bottom-35">
+      <RDLogoCircle />
+    </div>
+  </div>
+  <div class="w-full flex md:block">
+    <nav id="mobile-nav" class="hidden relative md:flex w-full">
+      <ul
+        class="py-8 bg-amber-200 grid auto-cols-max fixed md:relative top-30 md:top-0 bottom-0 z-10 inset-0 grid-flow-row md:grid-flow-col md:gap-8 w-full justify-center md:justify-end"
+      >
+        <li class="md:hidden">
+          <HeaderNavLink active={checkIfActive("bio")} href="/bio" text="Bio" />
+        </li>
+        <li class="md:hidden">
+          <HeaderNavLink
+            active={checkIfActive("upcoming")}
+            href="/upcoming"
+            text="Upcoming"
+          />
+        </li>
+        <li>
+          <HeaderNavLink
+            active={checkIfActive("musik")}
+            href="/musik"
+            text="Musik"
+          />
+        </li>
+        <li>
+          <HeaderNavLink
+            active={checkIfActive("media")}
+            href="/media"
+            text="Media"
+          />
+        </li>
+        <li>
+          <HeaderNavLink active={checkIfActive("epk")} href="/epk" text="EPK" />
+        </li>
+        <li>
+          <HeaderNavLink
+            active={checkIfActive("kontakt")}
+            href="/kontakt"
+            text="Kontakt"
+          />
+        </li>
+      </ul>
+    </nav>
+    <div class="md:hidden hamburger ml-auto">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelector(".hamburger")?.addEventListener("click", () => {
+    document.querySelector("#mobile-nav")?.classList.toggle("hidden");
+  });
+</script>
+
+<style>
+  .hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: black;
+  }
+</style>
