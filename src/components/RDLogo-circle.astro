@@ -1,0 +1,20 @@
+---
+import Picture from "astro/components/Picture.astro";
+import paperLogo from "../assets/rd-logo-paper.jpg";
+---
+
+<!-- <Logo size={64} /> -->
+<Picture
+  width={200}
+  height={200}
+  formats={["avif", "webp"]}
+  src={paperLogo}
+  alt="Ragin' D Logo"
+  class="m-auto"
+/>
+
+<style>
+  * {
+    border-radius: 100%;
+  }
+</style>

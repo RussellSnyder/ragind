@@ -1,4 +1,7 @@
 ---
+import HeaderNavLink from "../components/HeaderNavLink.astro";
+import RDLogoCircle from "../components/RDLogo-circle.astro";
+import RDLogoSmall from "../components/RDLogo-small.astro";
 import SocialMediaContainer from "../components/SocialMediaContainer.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
@@ -7,88 +10,122 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <div class="">
-    <header class="p-8 bg-amber-200 mb-8">
-      <h1 class="text-3xl">Ragin' D</h1>
-      <h2>Ska for your face</h2>
+  <div class="" id="home-page-container">
+    <header
+      class="p-8 bg-amber-200 mb-24 inset-shadow-amber-400 inset-shadow-sm"
+    >
+      <div
+        class="flex w-full max-w-container m-auto justify-between max-w-[1200px] items-center align-middle"
+      >
+        <nav class="w-full">
+          <ul
+            class="grid auto-cols-max grid-flow-col gap-8 w-full items-center align-middle"
+          >
+            <li>
+              <a href="/">
+                <RDLogoSmall />
+              </a>
+            </li>
+            <li><HeaderNavLink href="/bio" text="Bio" /></li>
+          </ul>
+        </nav>
+        <div class="w-full relative">
+          <div class="absolute inset-x-0 -bottom-35">
+            <RDLogoCircle />
+          </div>
+        </div>
+        <div class="w-full">
+          <nav class="w-full">
+            <ul
+              class="grid auto-cols-max grid-flow-col gap-8 w-full justify-end"
+            >
+              <li><HeaderNavLink href="/musik" text="Musik" /></li>
+              <li><HeaderNavLink href="/media" text="Media" /></li>
+              <li><HeaderNavLink href="/kontakt" text="Kontakt" /></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
 
-    <main class="mb-8 px-4 md:px-8">
-      <h3 class="text-2xl font-extrabold mb-4">
-        Ragin’ Diarrhea – Manege frei für das große Comeback! 🎪🔥
-      </h3>
-      <p class="mb-4">
-        „Wie kommt man bloß auf diesen Bandnamen?“ – eine Frage, die Ragin’
-        Diarrhea in den letzten 25 Jahren öfter gehört haben dürfte als ein
-        Marktschreier im Zirkus seine Angebote anpreist. Und die Antwort? Tja,
-        die gibt es genauso wenig, wie man erklären könnte, warum Wasser nass
-        ist oder der Papst noch Single bleibt. Vielleicht ist es genau diese
-        Unberechenbarkeit, die sie ausmacht – und die sie 2025 mit einem Knall
-        zurück in die Manege bringt.
-      </p>
-      <p class="mb-4">
-        Nach Jahren der kreativen Verschnaufpause heißt es nun: „Hereinspaziert!
-        Der Zirkus ist zurück!“ Mit einem frischen Namen – „RaginD“ – und einem
-        brandneuen Album im Gepäck stürmen die sechs Musiker die Bühne. Ihr
-        neuer Streich „Master of the Ring“ ist eine wilde, ungezügelte Show aus
-        Punk, Ska, Reggae und Swing, die nach Schweiß, Bier und tanzenden Massen
-        schreit.
-      </p>
-      <p class="mb-4">
-        Wie in jedem echten Zirkus ist für jeden Geschmack etwas dabei: Mal
-        tänzelt die Musik funkig über das Drahtseil, dann kracht ein
-        Punk-Feuerwerk los, bevor ein entspannter Ska- und Reggae-Groove das
-        Publikum sanft in den Feiermodus schaukelt. Doch das wahre Herzstück
-        dieser musikalischen Show bleibt die feurige Bläserfraktion, die mit
-        ihren mitreißenden Melodien den Sound von RaginD unverkennbar macht.
-      </p>
-      <p class="mb-4">
-        Unter der Leitung von Zirkusdirektor Smiley Schönfelder (Gitarre &
-        Gesang) wird ein musikalisches Spektakel entfacht, das jede Bühne in
-        eine brodelnde Manege verwandelt. An seiner Seite sorgt Jojo Schmid
-        (Gitarre & Gesang) mit energiegeladenen Riffs und treffsicherem Gespür
-        für den richtigen Ton.
-      </p>
-      <p class="mb-4">
-        Das rhythmische Fundament legt Tassilo Pesold am Schlagzeug – kraftvoll,
-        präzise und mit dem Gespür eines echten Taktmeisters. Russell Sneyder
-        (Bass) verleiht dem Sound Tiefe und sorgt mit verspielten Melodielinien
-        für das gewisse Etwas.
-      </p>
-      <p class="mb-4">
-        Für die zündenden Bläsersätze sind Basti Wurzberger (Trompete & Gesang)
-        und Florian Schreiber (Posaune) verantwortlich. Ob schneidende Hooks
-        oder kraftvolle Klangwellen – sie bringen den unverwechselbaren
-        Brass-Sound von RaginD auf die Bühne.
-      </p>
-      <p class="mb-4">
-        Feiern Sie mit uns 25 Jahre Circus Rock und werden Sie Teil eines
-        unvergesslichen Jubiläums. Bereit für einen Abend voller wilder Riffs,
-        atemberaubender Klänge und ausgelassener Ekstase? Hereinspaziert,
-        hereinspaziert – die Show beginnt!
-      </p>
-
-      <ul class="mb-8">
-        <li>Thomas „Smiley“ Schönfelder – Gesang / Gitarre</li>
-        <li>Johannes „Jojo“ Schmid – Gesang / Gitarre</li>
-        <li>Sebastian Wurzberger – Gesang / Trompete</li>
-        <li>Florian Schreiner – Posaune</li>
-        <li>Russell Snyder – Bass</li>
-        <li>Tassilo Pesold – Schlagzeug</li>
-      </ul>
-
-      <p class="mb-4">
-        Kontakt & Booking: Tassilo Pesold, Tel: +49 176 20770769, E-Mail:
-        tassilo-pesold@gmx.de
-      </p>
-    </main>
-
-    <footer
-      class="md:p-8 p-4 grid lg:grid-cols-2 items-center justify-center align-middle"
-    >
-      <div class="mb-4">
+    <main class="mb-8 relative">
+      <div
+        class="fixed top-50 rounded-r-lg bg-white py-2 lg:px-4 max-w-[400px] m-auto grid grid-cols-1 gap-1 items-center justify-center align-middle"
+      >
         <SocialMediaContainer />
       </div>
+      <div class="px-4 md:p-8 bg-paper max-w-[1200px] m-auto">
+        <h3 class="text-2xl font-extrabold mb-4">
+          Ragin’ Diarrhea – Manege frei für das große Comeback! 🎪🔥
+        </h3>
+        <p class="mb-4">
+          „Wie kommt man bloß auf diesen Bandnamen?“ – eine Frage, die Ragin’
+          Diarrhea in den letzten 25 Jahren öfter gehört haben dürfte als ein
+          Marktschreier im Zirkus seine Angebote anpreist. Und die Antwort? Tja,
+          die gibt es genauso wenig, wie man erklären könnte, warum Wasser nass
+          ist oder der Papst noch Single bleibt. Vielleicht ist es genau diese
+          Unberechenbarkeit, die sie ausmacht – und die sie 2025 mit einem Knall
+          zurück in die Manege bringt.
+        </p>
+        <p class="mb-4">
+          Nach Jahren der kreativen Verschnaufpause heißt es nun:
+          „Hereinspaziert! Der Zirkus ist zurück!“ Mit einem frischen Namen –
+          „RaginD“ – und einem brandneuen Album im Gepäck stürmen die sechs
+          Musiker die Bühne. Ihr neuer Streich „Master of the Ring“ ist eine
+          wilde, ungezügelte Show aus Punk, Ska, Reggae und Swing, die nach
+          Schweiß, Bier und tanzenden Massen schreit.
+        </p>
+        <p class="mb-4">
+          Wie in jedem echten Zirkus ist für jeden Geschmack etwas dabei: Mal
+          tänzelt die Musik funkig über das Drahtseil, dann kracht ein
+          Punk-Feuerwerk los, bevor ein entspannter Ska- und Reggae-Groove das
+          Publikum sanft in den Feiermodus schaukelt. Doch das wahre Herzstück
+          dieser musikalischen Show bleibt die feurige Bläserfraktion, die mit
+          ihren mitreißenden Melodien den Sound von RaginD unverkennbar macht.
+        </p>
+        <p class="mb-4">
+          Unter der Leitung von Zirkusdirektor Smiley Schönfelder (Gitarre &
+          Gesang) wird ein musikalisches Spektakel entfacht, das jede Bühne in
+          eine brodelnde Manege verwandelt. An seiner Seite sorgt Jojo Schmid
+          (Gitarre & Gesang) mit energiegeladenen Riffs und treffsicherem Gespür
+          für den richtigen Ton.
+        </p>
+        <p class="mb-4">
+          Das rhythmische Fundament legt Tassilo Pesold am Schlagzeug –
+          kraftvoll, präzise und mit dem Gespür eines echten Taktmeisters.
+          Russell Sneyder (Bass) verleiht dem Sound Tiefe und sorgt mit
+          verspielten Melodielinien für das gewisse Etwas.
+        </p>
+        <p class="mb-4">
+          Für die zündenden Bläsersätze sind Basti Wurzberger (Trompete &
+          Gesang) und Florian Schreiber (Posaune) verantwortlich. Ob schneidende
+          Hooks oder kraftvolle Klangwellen – sie bringen den unverwechselbaren
+          Brass-Sound von RaginD auf die Bühne.
+        </p>
+        <p class="mb-4">
+          Feiern Sie mit uns 25 Jahre Circus Rock und werden Sie Teil eines
+          unvergesslichen Jubiläums. Bereit für einen Abend voller wilder Riffs,
+          atemberaubender Klänge und ausgelassener Ekstase? Hereinspaziert,
+          hereinspaziert – die Show beginnt!
+        </p>
+
+        <ul class="mb-8">
+          <li>Thomas „Smiley“ Schönfelder – Gesang / Gitarre</li>
+          <li>Johannes „Jojo“ Schmid – Gesang / Gitarre</li>
+          <li>Sebastian Wurzberger – Gesang / Trompete</li>
+          <li>Florian Schreiner – Posaune</li>
+          <li>Russell Snyder – Bass</li>
+          <li>Tassilo Pesold – Schlagzeug</li>
+        </ul>
+
+        <p class="mb-4">
+          Kontakt & Booking: Tassilo Pesold, Tel: +49 176 20770769, E-Mail:
+          tassilo-pesold@gmx.de
+        </p>
+      </div>
+    </main>
+
+    <footer class="p-16 bg-amber-200 items-center justify-center align-middle">
       <div class="text-center">
         <div>Copyright Ragin'd 2025</div>
         <div>Made By Russell - You want a website? Let me know :-)</div>
@@ -96,3 +133,20 @@ import "../styles/global.css";
     </footer>
   </div>
 </Layout>
+
+<style>
+  #home-page-container {
+    background: rgb(163, 43, 0);
+    background: linear-gradient(
+      180deg,
+      rgba(163, 43, 0, 0.5802696078431373) 0%,
+      rgba(148, 15, 15, 1) 30%,
+      rgba(136, 61, 18, 1) 60%,
+      rgba(193, 56, 41, 0.8715861344537815) 100%
+    );
+  }
+
+  .bg-paper {
+    background-color: #f7f2dd;
+  }
+</style>

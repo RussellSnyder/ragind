@@ -42,10 +42,6 @@ const info: SocialMediaEntryProps[] = [
 ];
 ---
 
-<!-- Loads the SVG in `/src/icons/filename.svg` -->
-<div
-  id="social-media"
-  class="lg:px-8 max-w-[600px] m-auto grid grid-cols-5 gap-8 md:gap-2 items-center justify-center align-middle"
->
-  {info.map((entry) => <SocialMediaEntry {...entry} />)}
-</div>
+<!-- Loads the SVG in `/src/icons/filename.svg` -->{
+  info.map((entry) => <SocialMediaEntry {...entry} />)
+}
